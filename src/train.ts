@@ -9,7 +9,7 @@ function filterPositiveIntegers(arr: number[]): string {
     const positiveValues: number[] = arr.filter(value => value > 0);
   
     
-    return positiveValues.join(',');
+    return positiveValues.map(value => value.toString()).join("");
   }
   
   
