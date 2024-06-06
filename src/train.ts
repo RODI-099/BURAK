@@ -4,7 +4,7 @@
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 
 
-function filterPositiveIntegers(arr: number[]): string {
+function getPositive(arr: number[]): string {
     
     const positiveValues: number[] = arr.filter(value => value > 0);
   
@@ -14,6 +14,6 @@ function filterPositiveIntegers(arr: number[]): string {
   
   
   const numbers: number[] = [-1, 2, -3, 4, 0, 5];
-  const result: string = filterPositiveIntegers(numbers);
-  console.log(result); // Output: "2,4,5"
+  const result: string = getPositive(numbers);
+  console.log(result); // Output: "245"
   
