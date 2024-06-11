@@ -9,6 +9,8 @@
      - Error handling 
      */
 
+     // Traditional API, REST API, GRAPHQL API
+
 // H2-TASK: 
 
 // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin

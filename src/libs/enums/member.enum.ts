@@ -1,6 +1,6 @@
 export enum MemberType {
     USER = 'USER',
-    restaurant = "RESTAURANT",
+    RESTAURANT = 'RESTAURANT',
 
 }
 
