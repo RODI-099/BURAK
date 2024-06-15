@@ -1,3 +1,26 @@
+function mostRepeatedNumber(arr: number[]): number | null {
+  const numberCounts: { [key: number]: number } = {};
+  let maxCount = 0;
+  let mostRepeated: number | null = null;
+
+  for (let num of arr) {
+      numberCounts[num] = (numberCounts[num] || 0) + 1;
+      if (numberCounts[num] > maxCount) {
+          maxCount = numberCounts[num];
+          mostRepeated = num;
+      }
+  }
+
+  return mostRepeated;
+}
+
+
+const numbers = [1, 3, 2, 3, 4, 5, 3, 2, 2, 2];
+console.log(mostRepeatedNumber(numbers)); // Output: 2
+
+
+
+
 /* Project Standards:
   - Logging standards
   - Naming standars
@@ -18,16 +41,16 @@
 
 
 
-function extractDigits(input: string): string {
-    const digits = input.match(/\d+/g);
+// function extractDigits(input: string): string {
+//     const digits = input.match(/\d+/g);
   
-    return digits ? digits.join('') : '';
-  }
+//     return digits ? digits.join('') : '';
+//   }
   
   
-  const exampleString = "Hello MIT12, this is MIT14!";
-  const result = extractDigits(exampleString);
-  console.log(result); // 
+//   const exampleString = "Hello MIT12, this is MIT14!";
+//   const result = extractDigits(exampleString);
+//   console.log(result); // 
   
 
 // H-TASK: 
