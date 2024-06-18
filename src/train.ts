@@ -1,28 +1,53 @@
+// J-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+// MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+
+function findLongestWord(str: string) {
+  
+  const words = str.split(' ');
+
+  let longestWord = '';
+
+  for (let word of words) {
+      const cleanWord = word.replace(/[^\w]/g, '');
+      if (cleanWord.length > longestWord.length) {
+          longestWord = cleanWord;
+      }
+  }
+
+  // Return the longest word
+  return longestWord;
+}
+const sentence = "I study at MIT";
+console.log(findLongestWord(sentence)); // Output: "study"
+
+
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
 
-function mostRepeatedNumber(arr: number[]): number | null {
-  const numberCounts: { [key: number]: number } = {};
-  let maxCount = 0;
-  let mostRepeated: number | null = null;
+// function mostRepeatedNumber(arr: number[]): number | null {
+//   const numberCounts: { [key: number]: number } = {};
+//   let maxCount = 0;
+//   let mostRepeated: number | null = null;
 
-  for (let num of arr) {
-      numberCounts[num] = (numberCounts[num] || 0) + 1;
-      if (numberCounts[num] > maxCount) {
-          maxCount = numberCounts[num];
-          mostRepeated = num;
-      }
-  }
+//   for (let num of arr) {
+//       numberCounts[num] = (numberCounts[num] || 0) + 1;
+//       if (numberCounts[num] > maxCount) {
+//           maxCount = numberCounts[num];
+//           mostRepeated = num;
+//       }
+//   }
 
-  return mostRepeated;
-}
+//   return mostRepeated;
+// }
 
 
-const numbers = [1, 3, 2, 3, 4, 5, 3, 2, 2, 2];
-console.log(mostRepeatedNumber(numbers)); // Output: 2
+// const numbers = [1, 3, 2, 3, 4, 5, 3, 2, 2, 2];
+// console.log(mostRepeatedNumber(numbers)); // Output: 2
 
 
 
