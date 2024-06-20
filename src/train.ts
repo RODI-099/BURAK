@@ -1,26 +1,42 @@
+
+function countVowels(str: string) {
+    const vowels = "aeiouAEIOU";
+    let count = 0;
+    for (let char of inputString) {
+        if (vowels.includes(char)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Example usage:
+const inputString = "Hello, World!";
+console.log(countVowels(inputString)); // Output: 3
+
 // J-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
-function findLongestWord(str: string) {
+// function findLongestWord(str: string) {
   
-  const words = str.split(' ');
+//   const words = str.split(' ');
 
-  let longestWord = '';
+//   let longestWord = '';
 
-  for (let word of words) {
-      const cleanWord = word.replace(/[^\w]/g, '');
-      if (cleanWord.length > longestWord.length) {
-          longestWord = cleanWord;
-      }
-  }
+//   for (let word of words) {
+//       const cleanWord = word.replace(/[^\w]/g, '');
+//       if (cleanWord.length > longestWord.length) {
+//           longestWord = cleanWord;
+//       }
+//   }
 
-  // Return the longest word
-  return longestWord;
-}
-const sentence = "I study at MIT";
-console.log(findLongestWord(sentence)); // Output: "study"
+//   // Return the longest word
+//   return longestWord;
+// }
+// const sentence = "I study at MIT";
+// console.log(findLongestWord(sentence)); // Output: "study"
 
 
 // I-TASK:
