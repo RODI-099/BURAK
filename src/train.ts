@@ -1,18 +1,44 @@
+// K-TASK: 
 
-function countVowels(str: string) {
-    const vowels = "aeiouAEIOU";
-    let count = 0;
-    for (let char of inputString) {
-        if (vowels.includes(char)) {
-            count++;
-        }
-    }
-    return count;
-}
+// Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+// MASALAN: countVowels("string") return 1;
 
-// Example usage:
-const inputString = "Hello, World!";
-console.log(countVowels(inputString)); // Output: 3
+
+
+function reverseWords(inputString: string) {
+    let words = inputString.split(/\s+/);
+    words = words.filter(word => word.length > 0);
+    let reversedWords = words.map(word => word.split('').reverse().join(''));
+    let result = reversedWords.join(' ');
+    
+    return result;
+  }
+  let inputString = " I study at MIT ";
+  let outputString = reverseWords(inputString);
+  console.log(outputString);  
+  
+  
+
+// K-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+// MASALAN: countVowels("string") return 1;
+
+
+// function countVowels(str: string) {
+//     const vowels = "aeiouAEIOU";
+//     let count = 0;
+//     for (let char of inputString) {
+//         if (vowels.includes(char)) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// // Example usage:
+// const inputString = "Hello, World!";
+// console.log(countVowels(inputString)); // Output: 3
 
 // J-TASK: 
 
@@ -118,4 +144,9 @@ console.log(countVowels(inputString)); // Output: 3
 //   const numbers: number[] = [-1, 2, -3, 4, 0, 5];
 //   const result: string = getPositive(numbers);
 //   console.log(result); // Output: "245"
+
+// Validation 
+// Frontend Validation
+// Backend Validation
+// Database validation
   

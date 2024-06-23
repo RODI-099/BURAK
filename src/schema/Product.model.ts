@@ -64,7 +64,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-    {productName: 1, productsize: 1, ProductVolume: 1},
+    {productName: 1, productSize: 1, ProductVolume: 1},
     {unique: true});
 
 
