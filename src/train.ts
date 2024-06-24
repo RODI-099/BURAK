@@ -1,3 +1,30 @@
+// M-TASK: 
+
+// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+
+
+
+function getSquareNumbers(array: any[]) {
+    return array.map(number => {
+        return {
+            number: number,
+            square: number ** 2
+        };
+    });
+}
+
+
+const inputArray = [4, 5, 7];
+const result = getSquareNumbers(inputArray);
+console.log(result);
+
+
+
+
+
+
+
 // K-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
@@ -5,17 +32,17 @@
 
 
 
-function reverseWords(inputString: string) {
-    let words = inputString.split(/\s+/);
-    words = words.filter(word => word.length > 0);
-    let reversedWords = words.map(word => word.split('').reverse().join(''));
-    let result = reversedWords.join(' ');
+// function reverseWords(inputString: string) {
+//     let words = inputString.split(/\s+/);
+//     words = words.filter(word => word.length > 0);
+//     let reversedWords = words.map(word => word.split('').reverse().join(''));
+//     let result = reversedWords.join(' ');
     
-    return result;
-  }
-  let inputString = " I study at MIT ";
-  let outputString = reverseWords(inputString);
-  console.log(outputString);  
+//     return result;
+//   }
+//   let inputString = " I study at MIT ";
+//   let outputString = reverseWords(inputString);
+//   console.log(outputString);  
   
   
 
