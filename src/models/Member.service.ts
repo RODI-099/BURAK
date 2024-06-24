@@ -66,11 +66,11 @@ class MemberService {
         
         try {const result = await this.memberModel.create(input);
             result.memberPassword = "";
-            return result.toJSON();
+            return result;
 
         } catch(err) {
             console.error("Error, model:signupP", err);
-            throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
+            throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
         }
        
     }
