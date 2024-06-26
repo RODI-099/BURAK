@@ -69,7 +69,7 @@ class MemberService {
             return result;
 
         } catch(err) {
-            console.error("Error, model:signupP", err);
+            console.error("Error, model:signup", err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
         }
        
