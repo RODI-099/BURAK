@@ -1,3 +1,22 @@
+// N-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+// MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+
+
+function isPalindrome(str: string) {
+    str = str.toLowerCase();
+    let cleanedStr = str.split('').filter(char => /[a-z0-9]/.test(char)).join('');
+    let reversedStr = cleanedStr.split('').reverse().join('');
+    return cleanedStr === reversedStr;
+}
+
+console.log(isPalindrome("Aziza")); // true
+console.log(isPalindrome("Hello, World!")); // false
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("No lemon, no melon")); // true
+
+
 // M-TASK: 
 
 // Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
@@ -5,19 +24,19 @@
 
 
 
-function getSquareNumbers(array: any[]) {
-    return array.map(number => {
-        return {
-            number: number,
-            square: number ** 2
-        };
-    });
-}
+// function getSquareNumbers(array: any[]) {
+//     return array.map(number => {
+//         return {
+//             number: number,
+//             square: number ** 2
+//         };
+//     });
+// }
 
 
-const inputArray = [4, 5, 7];
-const result = getSquareNumbers(inputArray);
-console.log(result);
+// const inputArray = [4, 5, 7];
+// const result = getSquareNumbers(inputArray);
+// console.log(result);
 
 
 
