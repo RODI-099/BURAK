@@ -1,20 +1,39 @@
+// O-TASK:
+
+// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+
+
+function sumOfNumbers(array: (string | number | null)[]) {
+    let total = 0;
+    for (let value of array) {
+        if (typeof value === 'number') {  // Check if the value is a number
+            total += value;
+        }
+    }
+    return total;
+}
+const array = [1, 'a', 3.5, 'hello', 7, null, 2];
+const result = sumOfNumbers(array);
+console.log(`Example: The sum of the numbers in the array is: ${result}`);
+
 // N-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
 // MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 
 
-function isPalindrome(str: string) {
-    str = str.toLowerCase();
-    let cleanedStr = str.split('').filter(char => /[a-z0-9]/.test(char)).join('');
-    let reversedStr = cleanedStr.split('').reverse().join('');
-    return cleanedStr === reversedStr;
-}
+// function isPalindrome(str: string) {
+//     str = str.toLowerCase();
+//     let cleanedStr = str.split('').filter(char => /[a-z0-9]/.test(char)).join('');
+//     let reversedStr = cleanedStr.split('').reverse().join('');
+//     return cleanedStr === reversedStr;
+// }
 
-console.log(isPalindrome("Aziza")); // true
-console.log(isPalindrome("Hello, World!")); // false
-console.log(isPalindrome("racecar")); // true
-console.log(isPalindrome("No lemon, no melon")); // true
+// console.log(isPalindrome("Aziza")); // true
+// console.log(isPalindrome("Hello, World!")); // false
+// console.log(isPalindrome("racecar")); // true
+// console.log(isPalindrome("No lemon, no melon")); // true
 
 
 // M-TASK: 
