@@ -29,7 +29,7 @@ function validateSignupForm() {
     const memberNick = $(".member-nick").val();
     const memberPhone = $(".member-phone").val();
     const memberPassword = $(".member-password").val();
-    const confirmPassword = $(".consfirm-password").val();
+    const confirmPassword = $(".confirm-password").val();
 
     if(
         memberNick === "" || 
