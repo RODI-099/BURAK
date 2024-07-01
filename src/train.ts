@@ -1,21 +1,39 @@
+// P-TASK:
+
+// Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+function convertArrayToObjectArray(arr: any[]) {
+    return arr.map(element => ({ value: element }));
+}
+
+// Misol uchun foydalanish:
+const originalArray = [1, 2, 3, 4];
+const objectArray = convertArrayToObjectArray(originalArray);
+
+console.log(objectArray);
+
+
+
+
 // O-TASK:
 
 // Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
 // MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 
 
-function sumOfNumbers(array: (string | number | null)[]) {
-    let total = 0;
-    for (let value of array) {
-        if (typeof value === 'number') {  // Check if the value is a number
-            total += value;
-        }
-    }
-    return total;
-}
-const array = [1, 'a', 3.5, 'hello', 7, null, 2];
-const result = sumOfNumbers(array);
-console.log(`Example: The sum of the numbers in the array is: ${result}`);
+// function sumOfNumbers(array: (string | number | null)[]) {
+//     let total = 0;
+//     for (let value of array) {
+//         if (typeof value === 'number') {  // Check if the value is a number
+//             total += value;
+//         }
+//     }
+//     return total;
+// }
+// const array = [1, 'a', 3.5, 'hello', 7, null, 2];
+// const result = sumOfNumbers(array);
+// console.log(`Example: The sum of the numbers in the array is: ${result}`);
 
 // N-TASK: 
 
