@@ -3,15 +3,14 @@
 // Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
 // MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
-function convertArrayToObjectArray(arr: any[]) {
-    return arr.map(element => ({ value: element }));
+function objectToArray(obj: { [s: string]: unknown; } | ArrayLike<unknown>) {
+    return Object.entries(obj);
 }
 
-// Misol uchun foydalanish:
-const originalArray = [1, 2, 3, 4];
-const objectArray = convertArrayToObjectArray(originalArray);
 
-console.log(objectArray);
+const obj = { a: 10, b: 20, z: 40, y: 30 };
+const result = objectToArray(obj);
+console.log(result); // [['a', 10], ['b', 20]]
 
 
 
