@@ -1,16 +1,34 @@
+// R-TASK:
+
+// Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+// MASALAN: calculate("1+3") return 4;
+
+function calculate(expression: string) {
+  
+  let numbers = expression.split("+");
+
+  let total = numbers.reduce((sum, number) => sum + Number(number), 0);
+  
+  return total;
+}
+
+// Misol uchun:
+console.log(calculate("1+3"));  
+console.log(calculate("10+80"));  
+
 
 // Q-TASK:
 
 // Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
 // MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false
 
-function hasProperty(obj: object, str: string): boolean {
-  return obj.hasOwnProperty(str);
-}
+// function hasProperty(obj: object, str: string): boolean {
+//   return obj.hasOwnProperty(str);
+// }
 
 
-console.log(hasProperty({name: "KIA", model: "CARNIVAL"}, "model")); // Returns true
-console.log(hasProperty({name: "TESLA", model: "MODEL Y"}, "year")); // Returns false
+// console.log(hasProperty({name: "KIA", model: "CARNIVAL"}, "model")); // Returns true
+// console.log(hasProperty({name: "TESLA", model: "MODEL Y"}, "year")); // Returns false
 
 
 // P-TASK:
