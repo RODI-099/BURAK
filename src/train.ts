@@ -1,20 +1,37 @@
+// S-TASK:
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+// MASALAN: missingNumber([3, 0, 1]) return 2
+
+
+function missing(arr: string | any[]) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== i + 1) {
+      return i + 1;
+    }
+  }
+}
+let a = missing([1, 2, 3, 4, 5, 7, 8, 9, 10])
+console.log(a)
+
+
 // R-TASK:
 
 // Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
 // MASALAN: calculate("1+3") return 4;
 
-function calculate(expression: string) {
+// function calculate(expression: string) {
   
-  let numbers = expression.split("+");
+//   let numbers = expression.split("+");
 
-  let total = numbers.reduce((sum, number) => sum + Number(number), 0);
+//   let total = numbers.reduce((sum, number) => sum + Number(number), 0);
   
-  return total;
-}
+//   return total;
+// }
 
-// Misol uchun:
-console.log(calculate("1+3"));  
-console.log(calculate("10+80"));  
+// // Misol uchun:
+// console.log(calculate("1+3"));  
+// console.log(calculate("10+80"));  
 
 
 // Q-TASK:
