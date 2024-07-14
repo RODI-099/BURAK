@@ -1,18 +1,35 @@
+const array1: number[] = [1, 4, 5, 6];
+const array2: number[] = [2, 3, 4, 5, 6, 7, 9, 10];
+
+function mergeAndSortArrays(array1: number[], array2: number[]): number[] {
+  
+  let combinedArray: number[] = array1.concat(array2);
+
+ 
+  combinedArray.sort((a, b) => a - b);
+
+  return combinedArray;
+}
+
+const result = mergeAndSortArrays(array1, array2);
+console.log(result);  // Output: [1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 9, 10]
+
+
 // S-TASK:
 
 // Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
 // MASALAN: missingNumber([3, 0, 1]) return 2
 
 
-function missing(arr: string | any[]) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== i + 1) {
-      return i + 1;
-    }
-  }
-}
-let a = missing([1, 2, 3, 4, 5, 7, 8, 9, 10])
-console.log(a)
+// function missing(arr: string | any[]) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== i + 1) {
+//       return i + 1;
+//     }
+//   }
+// }
+// let a = missing([1, 2, 3, 4, 5, 7, 8, 9, 10])
+// console.log(a)
 
 
 // R-TASK:
