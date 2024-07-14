@@ -1,3 +1,9 @@
+// T-TASK:
+
+// Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
+// MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
+
+
 const array1: number[] = [1, 4, 5, 6];
 const array2: number[] = [2, 3, 4, 5, 6, 7, 9, 10];
 
