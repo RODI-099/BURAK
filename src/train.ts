@@ -1,24 +1,44 @@
+// U-TASK:
+
+// Shunday function yozing, uni number parametri bolsin va 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+
+function sumOdds(number: number) {
+  let count = 0;
+  for (let i = 2; i <= number; i++) {
+      if (i % 2 !== 0) {
+          count++;
+      }
+  }
+  return count;
+}
+
+// Examples
+console.log(sumOdds(17));  // Output: 8
+console.log(sumOdds(25)); // Output: 12
+
 // T-TASK:
 
 // Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
 // MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
 
 
-const array1: number[] = [1, 4, 5, 6];
-const array2: number[] = [2, 3, 4, 5, 6, 7, 9, 10];
+// const array1: number[] = [1, 4, 5, 6];
+// const array2: number[] = [2, 3, 4, 5, 6, 7, 9, 10];
 
-function mergeAndSortArrays(array1: number[], array2: number[]): number[] {
+// function mergeAndSortArrays(array1: number[], array2: number[]): number[] {
   
-  let combinedArray: number[] = array1.concat(array2);
+//   let combinedArray: number[] = array1.concat(array2);
 
  
-  combinedArray.sort((a, b) => a - b);
+//   combinedArray.sort((a, b) => a - b);
 
-  return combinedArray;
-}
+//   return combinedArray;
+// }
 
-const result = mergeAndSortArrays(array1, array2);
-console.log(result);  // Output: [1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 9, 10]
+// const result = mergeAndSortArrays(array1, array2);
+// console.log(result);  // Output: [1, 2, 3, 4, 4, 5, 5, 6, 6, 7, 9, 10]
 
 
 // S-TASK:
