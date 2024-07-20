@@ -1,49 +1,53 @@
-import { shapeIntoMongooseObjectId } from "../libs/config";
+import { shapeIntoMongooseObject } from "../libs/config";
 import Errors, { HttpCode, Message } from "../libs/Errors";
-import { Product, ProductInput, ProductUpdateInput } from "../libs/types/product";
+import {
+  Product,
+  ProductInput,
+  ProductUpdateInput,
+} from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 
 class ProductService {
-private readonly productModel;
+  private readonly productModel;
 
-constructor() {
+  constructor() {
     this.productModel = ProductModel;
-}
+  }
 
-// SPA
+  // SPA
 
-//SSR
+  // BSSR
 
-public async getAllProducts(): Promise<Product[]> {
-  const result = await this.productModel.find().exec();
-  if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+  public async getAllProducts(): Promise<Product[] | any> {
+    const result = await this.productModel.find().exec();
 
-  return result;
- }
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
-public async createNewProduct(input: ProductInput): Promise<Product> {
+    return result;
+  }
+
+  public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
-        return await this.productModel.create(input);
-    } catch(err) {
-        console.error("Error, model:createNewProduct:", err);
-        throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
+      return (await this.productModel.create(input)) as unknown as Product;
+    } catch (err) {
+      console.error("Error, model:createNewProduct:", err);
+      throw new Errors(HttpCode.BAD_REQUEST, Message.CREATED_FAILED);
     }
+  }
+
+  public async updateChosenProduct(
+    id: string,
+    input: ProductUpdateInput
+  ): Promise<Product> {
+    id = shapeIntoMongooseObject(id);
+    const result = await this.productModel
+      .findOneAndUpdate({ _id: id }, input, { new: true })
+      .exec();
+
+    if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    return result as unknown as Product;
+  }
 }
 
-public async updateChosenProduct(
-    id: string, 
-    input: ProductUpdateInput
-): Promise<Product> {
-
-  // string => ObjectId
-  id = shapeIntoMongooseObjectId(id);
-  const result = await this.productModel
-  .findOneAndUpdate({ _id: id }, input, { new: true })
-  .exec();
-  if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
-
-  return result;
- }
-};
-
-export default  ProductService;
+export default ProductService;

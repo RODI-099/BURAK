@@ -4,6 +4,7 @@ import { Request } from "express";
 import { Session } from "express-session";
 
 export interface Member {
+    toJSON(): Member | PromiseLike<Member>;
     _id: ObjectId;
     memberType: MemberType;
     memberStatus: MemberStatus;
@@ -46,6 +47,12 @@ export interface MemberUpdateInput {
     memberImage?: string;
     memberPoints?: number;
 }
+
+export interface ExtendedRequest extends Request {
+    member: Member;
+    file: Express.Multer.File;
+    files: Express.Multer.File[];
+  }
 
 export interface AdminRequest extends Request {
     member: Member;
