@@ -1,22 +1,45 @@
+// W-TASK:
+
+// Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
+// MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]]
+
+
+function chunkArray(array: string | any[], size: number) {
+
+  const chunks = [];
+
+
+  for (let i = 0; i < array.length; i += size) {
+  
+    const chunk = array.slice(i, i + size);
+    chunks.push(chunk);
+  }
+
+  return chunks;
+}
+
+
+const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+console.log(result);
 // U-TASK:
 
 // Shunday function yozing, uni number parametri bolsin va 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
 // MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
 
 
-function sumOdds(number: number) {
-  let count = 0;
-  for (let i = 2; i <= number; i++) {
-      if (i % 2 !== 0) {
-          count++;
-      }
-  }
-  return count;
-}
+// function sumOdds(number: number) {
+//   let count = 0;
+//   for (let i = 2; i <= number; i++) {
+//       if (i % 2 !== 0) {
+//           count++;
+//       }
+//   }
+//   return count;
+// }
 
-// Examples
-console.log(sumOdds(17));  // Output: 8
-console.log(sumOdds(25)); // Output: 12
+// // Examples
+// console.log(sumOdds(17));  // Output: 8
+// console.log(sumOdds(25)); // Output: 12
 
 // T-TASK:
 
