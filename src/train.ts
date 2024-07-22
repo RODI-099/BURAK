@@ -1,26 +1,61 @@
+function countOccurrences(obj: { model: string; steer: { model: string; size: number; }; }, key: string) {
+  let count = 0;
+
+  function recurse(currentObj: { [x: string]: any; model?: string; steer?: { model: string; size: number; }; }) {
+    for (let k in currentObj) {
+      if (k === key) {
+        count++;
+      }
+      if (typeof currentObj[k] === 'object' && currentObj[k] !== null) {
+        recurse(currentObj[k]);
+      }
+    }
+  }
+
+  recurse(obj);
+  return count;
+}
+
+// Example usage
+const exampleObject = {
+  model: 'Bugatti',
+  steer: {
+    model: 'HANKOOK',
+    size: 30
+  }
+};
+
+const result = countOccurrences(exampleObject, 'model');
+console.log(result); // Output: 2
+
+
+
+
+
+
 // W-TASK:
 
 // Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
 // MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]]
 
 
-function chunkArray(array: string | any[], size: number) {
+// function chunkArray(array: string | any[], size: number) {
 
-  const chunks = [];
+//   const chunks = [];
 
 
-  for (let i = 0; i < array.length; i += size) {
+//   for (let i = 0; i < array.length; i += size) {
   
-    const chunk = array.slice(i, i + size);
-    chunks.push(chunk);
-  }
+//     const chunk = array.slice(i, i + size);
+//     chunks.push(chunk);
+//   }
 
-  return chunks;
-}
+//   return chunks;
+// }
 
 
-const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
-console.log(result);
+// const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+// console.log(result);
 // U-TASK:
 
 // Shunday function yozing, uni number parametri bolsin va 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
