@@ -54,7 +54,7 @@ const memberSchema = new Schema({
 
 
 },
-{timestamps: true},  // updatedAt, createdAt
+{timestamps: true } // updatedAt, createdAt
 
 );
 
