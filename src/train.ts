@@ -1,32 +1,46 @@
-function countOccurrences(obj: { model: string; steer: { model: string; size: number; }; }, key: string) {
-  let count = 0;
 
-  function recurse(currentObj: { [x: string]: any; model?: string; steer?: { model: string; size: number; }; }) {
-    for (let k in currentObj) {
-      if (k === key) {
-        count++;
-      }
-      if (typeof currentObj[k] === 'object' && currentObj[k] !== null) {
-        recurse(currentObj[k]);
-      }
-    }
-  }
+// Y-TASK:
 
-  recurse(obj);
-  return count;
+//  Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+//  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+
+function intersection (a: any, b: any) {
+  const setA = new Set(a);
+  return b.filter((value: any) => setA.has(value));
 }
 
-// Example usage
-const exampleObject = {
-  model: 'Bugatti',
-  steer: {
-    model: 'HANKOOK',
-    size: 30
-  }
-};
+console.log(intersection([1,2,3], [2,3,4,5]))
 
-const result = countOccurrences(exampleObject, 'model');
-console.log(result); // Output: 2
+// function countOccurrences(obj: { model: string; steer: { model: string; size: number; }; }, key: string) {
+//   let count = 0;
+
+//   function recurse(currentObj: { [x: string]: any; model?: string; steer?: { model: string; size: number; }; }) {
+//     for (let k in currentObj) {
+//       if (k === key) {
+//         count++;
+//       }
+//       if (typeof currentObj[k] === 'object' && currentObj[k] !== null) {
+//         recurse(currentObj[k]);
+//       }
+//     }
+//   }
+
+//   recurse(obj);
+//   return count;
+// }
+
+// // Example usage
+// const exampleObject = {
+//   model: 'Bugatti',
+//   steer: {
+//     model: 'HANKOOK',
+//     size: 30
+//   }
+// };
+
+// const result = countOccurrences(exampleObject, 'model');
+// console.log(result); // Output: 2
 
 
 
