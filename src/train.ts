@@ -1,3 +1,24 @@
+// Z-TASK:
+
+// Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
+// MASALAN: sumEvens([1,2,3]) return 2
+
+
+let numStr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sumEvens = (numStr:any) => {
+  let sum = 0;
+  for (let i = 0; i < numStr.length; i++) {
+    if (numStr[i] % 2 === 0) {
+    sum = sum + numStr[i];
+    }
+  }
+  return sum;
+}
+ 
+console.log(sumEvens(numStr));
+
+
 
 // Y-TASK:
 
@@ -5,12 +26,12 @@
 //  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
 
-function intersection (a: any, b: any) {
-  const setA = new Set(a);
-  return b.filter((value: any) => setA.has(value));
-}
+// function intersection (a: any, b: any) {
+//   const setA = new Set(a);
+//   return b.filter((value: any) => setA.has(value));
+// }
 
-console.log(intersection([1,2,3], [2,3,4,5]))
+// console.log(intersection([1,2,3], [2,3,4,5]))
 
 // function countOccurrences(obj: { model: string; steer: { model: string; size: number; }; }, key: string) {
 //   let count = 0;
