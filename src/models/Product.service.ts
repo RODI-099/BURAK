@@ -1,5 +1,5 @@
 import { ProductStatus } from "../libs/enums/product.enum";
-import { shapeIntoMongooseObject } from "../libs/config";
+import { shapeIntoMongooseObjectId } from "../libs/config";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import {
   Product,
@@ -48,7 +48,7 @@ class ProductService {
   }
 
   public async getProduct(memberId: ObjectId | null, id: string): Promise<Product> {
-    const productId = shapeIntoMongooseObject(id);
+    const productId = shapeIntoMongooseObjectId(id);
 
     let result = await this.productModel.findOne({_id: productId, productStatus: ProductStatus.PROCESS,}).exec()
     if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
@@ -108,7 +108,7 @@ class ProductService {
     id: string,
     input: ProductUpdateInput
   ): Promise<Product> {
-    id = shapeIntoMongooseObject(id);
+    id = shapeIntoMongooseObjectId(id);
     const result = await this.productModel
       .findOneAndUpdate({ _id: id }, input, { new: true })
       .exec();
