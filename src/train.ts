@@ -1,20 +1,45 @@
+// ZE-TASK:
+
+// Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+// MASALAN: removeDuplicate('stringg') return 'string'
+
+
+function removeDuplicate(str: any) {
+  let seen = new Set(); 
+  let result = []; 
+
+  for (let char of str) {
+      if (!seen.has(char)) {
+          seen.add(char);
+          result.push(char);
+      }
+  }
+
+  return result.join('');
+}
+
+// Example usage:
+console.log(removeDuplicate('stringg')); // Output: 'string'
+
+
+
 // ZD-TASK:
 
 // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
-function changeNumberInArray(target: any, arr: any, newValue: any) {
-  const index = arr.indexOf(target);
-  if (index !== -1) {
-      arr[index] = newValue;
-  } else {
-      console.log(`The target value ${target} is not in the array.`);
-  }
-  return arr;
-}
+// function changeNumberInArray(target: any, arr: any, newValue: any) {
+//   const index = arr.indexOf(target);
+//   if (index !== -1) {
+//       arr[index] = newValue;
+//   } else {
+//       console.log(`The target value ${target} is not in the array.`);
+//   }
+//   return arr;
+// }
 
-// Another example usage:
-const result = changeNumberInArray(7, [1, 3, 7, 2, 8, 7], 9);
-console.log(result);  // Output: [1, 3, 9, 2, 8, 7]
+// // Another example usage:
+// const result = changeNumberInArray(7, [1, 3, 7, 2, 8, 7], 9);
+// console.log(result);  // Output: [1, 3, 9, 2, 8, 7]
 
 // ZC-TASK:
 

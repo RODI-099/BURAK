@@ -26,7 +26,6 @@ class ProductService {
   // SPA
 
   public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
-    console.log("inquiry:", inquiry);
     const match: T = {productStatus: ProductStatus.PROCESS};
     if(inquiry.productCollection) match.productCollection = inquiry.productCollection;
     if (inquiry.search) {
@@ -120,3 +119,4 @@ class ProductService {
 }
 
 export default ProductService;
+
