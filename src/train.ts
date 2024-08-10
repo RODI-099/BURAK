@@ -1,25 +1,44 @@
+// Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+// MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
+
+
+function capitalizeWords(input: string): string {
+  return input
+    .split(' ')
+    .map(word => {
+      return word.length > 2 ? word[0].toUpperCase() + word.slice(1).toLowerCase() : word.toLowerCase();
+    })
+    .join(' ');
+}
+
+
+const result = capitalizeWords('you have to be software developer');
+console.log(result); 
+
+
+
 // ZE-TASK:
 
 // Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
 // MASALAN: removeDuplicate('stringg') return 'string'
 
 
-function removeDuplicate(str: any) {
-  let seen = new Set(); 
-  let result = []; 
+// function removeDuplicate(str: any) {
+//   let seen = new Set(); 
+//   let result = []; 
 
-  for (let char of str) {
-      if (!seen.has(char)) {
-          seen.add(char);
-          result.push(char);
-      }
-  }
+//   for (let char of str) {
+//       if (!seen.has(char)) {
+//           seen.add(char);
+//           result.push(char);
+//       }
+//   }
 
-  return result.join('');
-}
+//   return result.join('');
+// }
 
-// Example usage:
-console.log(removeDuplicate('stringg')); // Output: 'string'
+// // Example usage:
+// console.log(removeDuplicate('stringg')); // Output: 'string'
 
 
 

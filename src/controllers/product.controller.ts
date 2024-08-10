@@ -14,7 +14,7 @@ const productController: T = {};
 /** SPA */
 productController.getProducts = async (req: Request, res: Response) => {
     try {
-       // console.log("getProducts");
+        console.log("getProducts");
 
         const {page, limit, order, productCollection, search} = req.query;
 
@@ -43,7 +43,7 @@ productController.getProducts = async (req: Request, res: Response) => {
 
 productController.getProduct = async (req: ExtendedRequest, res: Response) => {
     try {
-        console.log("getProduct");
+        //console.log("getProduct");
         const {id} = req.params;
         console.log("req.member:", req.member)
         const memberId = req.member?._id ?? null,

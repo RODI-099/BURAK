@@ -62,7 +62,7 @@ class ProductService {
 
       const existView = await this.viewService.checkViewExistence(input);
       
-      console.log("existView:", !!existView)
+      console.log("existView:", !existView)
       if(!existView) {
         // insert new view 
         
