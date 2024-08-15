@@ -1,3 +1,32 @@
+// ZH-TASK:
+
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+
+
+function findDisappearedNumbers(arr: any) {
+  const missingNumbers = [];
+  
+  const maxNum = Math.max(...arr);
+  const isPresent = new Array(maxNum).fill(false);
+  arr.forEach((num: number) => {
+      isPresent[num - 1] = true;
+  });
+  
+  for (let i = 1; i <= maxNum; i++) {
+      if (!isPresent[i - 1]) {
+          missingNumbers.push(i);
+      }
+  }
+  
+  return missingNumbers;
+}
+
+// Example usage
+const result = findDisappearedNumbers([1, 3, 4, 7, 9, 15]);
+console.log(result);  // Output: [2, 5, 6]
+
+
 // TASK ZG
 
 // String sifatida berilgan string parametrni
@@ -5,14 +34,14 @@
 
 // MASALAN: convertToSnakeCase('name should be a string')
 // return 'name_should_be_a_string'
-function convertToSnakeCase(inputString: any) {
+// function convertToSnakeCase(inputString: any) {
   
-  return inputString.replace(/ /g, '_').toLowerCase();
-}
+//   return inputString.replace(/ /g, '_').toLowerCase();
+// }
 
-// Example usage:
-const result = convertToSnakeCase('I am MIT student');
-console.log(result);  
+// // Example usage:
+// const result = convertToSnakeCase('I am MIT student');
+// console.log(result);  
 
 
 // Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
