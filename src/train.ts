@@ -1,30 +1,46 @@
+// ZI-TASK:
+
+// Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+// MASALAN: delayHelloWorld("Hello World") return "Hello World"
+
+function delayHelloWorld(message: any, callback: any) {
+  setTimeout(() => {
+      callback(message);
+  }, 3000);
+}
+
+// Example usage:
+delayHelloWorld("Hello World", function(result: any) {
+  console.log(result);  
+});
+
 // ZH-TASK:
 
 // Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
 // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
 
 
-function findDisappearedNumbers(arr: any) {
-  const missingNumbers = [];
+// function findDisappearedNumbers(arr: any) {
+//   const missingNumbers = [];
   
-  const maxNum = Math.max(...arr);
-  const isPresent = new Array(maxNum).fill(false);
-  arr.forEach((num: number) => {
-      isPresent[num - 1] = true;
-  });
+//   const maxNum = Math.max(...arr);
+//   const isPresent = new Array(maxNum).fill(false);
+//   arr.forEach((num: number) => {
+//       isPresent[num - 1] = true;
+//   });
   
-  for (let i = 1; i <= maxNum; i++) {
-      if (!isPresent[i - 1]) {
-          missingNumbers.push(i);
-      }
-  }
+//   for (let i = 1; i <= maxNum; i++) {
+//       if (!isPresent[i - 1]) {
+//           missingNumbers.push(i);
+//       }
+//   }
   
-  return missingNumbers;
-}
+//   return missingNumbers;
+// }
 
-// Example usage
-const result = findDisappearedNumbers([1, 3, 4, 7, 9, 15]);
-console.log(result);  // Output: [2, 5, 6]
+// // Example usage
+// const result = findDisappearedNumbers([1, 3, 4, 7, 9, 15]);
+// console.log(result);  // Output: [2, 5, 6]
 
 
 // TASK ZG
