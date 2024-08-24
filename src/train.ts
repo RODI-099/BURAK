@@ -1,17 +1,35 @@
+// ZL-TASK:
+
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+
+function stringToKebab(str: any) {
+
+  const wordsArray = str.toLowerCase().split(' ');
+ 
+  const kebabCaseStr = wordsArray.join('-');
+  return kebabCaseStr;
+}
+
+// Example usage:
+const result = stringToKebab("I love Programmming");
+console.log(result);  
+
+
 // ZK-TASK:
 
 // Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
 // MASALAN: printNumbers()
 
 
-function printNumbers(counter = 1) {
-  console.log(counter);
-  if (counter < 5) {
-      setTimeout(() => printNumbers(counter + 1), 1000); 
-  }
-}
+// function printNumbers(counter = 1) {
+//   console.log(counter);
+//   if (counter < 5) {
+//       setTimeout(() => printNumbers(counter + 1), 1000); 
+//   }
+// }
 
-printNumbers();
+// printNumbers();
 
 
 
