@@ -1,19 +1,33 @@
+function reverseFunction(num: number, reversed = 0) {
+  if (num === 0) {
+      return reversed;
+  }
+  return reverseFunction(Math.floor(num / 10),
+      reversed * 10 + num % 10);
+}
+
+const num = 987654321;
+const result = reverseFunction(num);
+
+console.log(result);
+
+
 // ZL-TASK:
 
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
-function stringToKebab(str: any) {
+// function stringToKebab(str: any) {
 
-  const wordsArray = str.toLowerCase().split(' ');
+//   const wordsArray = str.toLowerCase().split(' ');
  
-  const kebabCaseStr = wordsArray.join('-');
-  return kebabCaseStr;
-}
+//   const kebabCaseStr = wordsArray.join('-');
+//   return kebabCaseStr;
+// }
 
-// Example usage:
-const result = stringToKebab("I love Programmming");
-console.log(result);  
+// // Example usage:
+// const result = stringToKebab("I love Programmming");
+// console.log(result);  
 
 
 // ZK-TASK:
