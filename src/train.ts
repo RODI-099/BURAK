@@ -1,15 +1,39 @@
-function reverseFunction(num: number, reversed = 0) {
-  if (num === 0) {
-      return reversed;
-  }
-  return reverseFunction(Math.floor(num / 10),
-      reversed * 10 + num % 10);
+// ZN-TASK:
+
+// Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+// MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+
+
+function rotateArray(arr: any, index: number) {
+  index = index % arr.length;
+
+  return arr.slice(index).concat(arr.slice(0, index));
 }
 
-const num = 987654321;
-const result = reverseFunction(num);
 
-console.log(result);
+
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));  
+
+
+// ZM-TASK:
+
+// Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
+// MASALAN: reverseInteger(123456789) return 987654321
+
+
+// function reverseFunction(num: number, reversed = 0) {
+//   if (num === 0) {
+//       return reversed;
+//   }
+//   return reverseFunction(Math.floor(num / 10),
+//       reversed * 10 + num % 10);
+// }
+
+// const num = 987654321;
+// const result = reverseFunction(num);
+
+// console.log(result);
 
 
 // ZL-TASK:
