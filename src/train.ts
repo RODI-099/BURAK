@@ -1,19 +1,42 @@
+// ZP-TASK:
+
+// Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+
+
+function findDuplicates(arr: any) {
+  const seen = new Set();       
+  const duplicates = new Set(); 
+  for (const num of arr) {
+    if (seen.has(num)) {
+      duplicates.add(num);
+    } else {
+      seen.add(num);
+    }
+  }
+  return Array.from(duplicates);
+}
+
+// Example usage
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 2, 3, 1,])); // Output: [3, 4]
+
+
 // ZO-TASK:
 
 // Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
 // MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
 
 
-function areParenthesesBalanced(s: string) {
-  const openCount = s.split('(').length - 1;
+// function areParenthesesBalanced(s: string) {
+//   const openCount = s.split('(').length - 1;
 
-  const closeCount = s.split(')').length - 1;
+//   const closeCount = s.split(')').length - 1;
 
-  return openCount === closeCount;
-}
+//   return openCount === closeCount;
+// }
 
-const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
-console.log(result); 
+// const result = areParenthesesBalanced("string()ichida(qavslar)soni()balansda");
+// console.log(result); 
 
 
 // ZN-TASK:
