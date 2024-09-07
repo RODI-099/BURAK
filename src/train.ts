@@ -1,24 +1,42 @@
+// ZQ-TASK:
+
+// Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
+// MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
+
+
+function countNumberAndLetters(str: any) {
+  const characters = str.split('');
+  const numberCount = characters.filter((char: any) => char >= '0' && char <= '9').length;
+  const letterCount = characters.filter((char: any) => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')).length;
+
+  return { number: numberCount, letter: letterCount };
+}
+
+// Example usage
+const result = countNumberAndLetters("MIT 12 XYZ");
+console.log(result); 
+
 // ZP-TASK:
 
 // Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
 // MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 
 
-function findDuplicates(arr: any) {
-  const seen = new Set();       
-  const duplicates = new Set(); 
-  for (const num of arr) {
-    if (seen.has(num)) {
-      duplicates.add(num);
-    } else {
-      seen.add(num);
-    }
-  }
-  return Array.from(duplicates);
-}
+// function findDuplicates(arr: any) {
+//   const seen = new Set();       
+//   const duplicates = new Set(); 
+//   for (const num of arr) {
+//     if (seen.has(num)) {
+//       duplicates.add(num);
+//     } else {
+//       seen.add(num);
+//     }
+//   }
+//   return Array.from(duplicates);
+// }
 
-// Example usage
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 2, 3, 1,])); // Output: [3, 4]
+// // Example usage
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 2, 3, 1,])); // Output: [3, 4]
 
 
 // ZO-TASK:
