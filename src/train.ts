@@ -1,20 +1,39 @@
+// ZR-TASK:
+
+// Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+// MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+// @MITASK
+
+function singleNumber(arr: any) {
+  if (arr && arr.length > 0) {
+    return arr[0]; 
+  } else {
+    return null; 
+  }
+}
+
+// Example usage
+console.log(singleNumber([4, 2, 1, 2, 1])); // Output: 4
+
+
 // ZQ-TASK:
 
 // Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
 // MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
 
 
-function countNumberAndLetters(str: any) {
-  const characters = str.split('');
-  const numberCount = characters.filter((char: any) => char >= '0' && char <= '9').length;
-  const letterCount = characters.filter((char: any) => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')).length;
+// function countNumberAndLetters(str: any) {
+//   const characters = str.split('');
+//   const numberCount = characters.filter((char: any) => char >= '0' && char <= '9').length;
+//   const letterCount = characters.filter((char: any) => (char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')).length;
 
-  return { number: numberCount, letter: letterCount };
-}
+//   return { number: numberCount, letter: letterCount };
+// }
 
-// Example usage
-const result = countNumberAndLetters("MIT 12 XYZ");
-console.log(result); 
+// // Example usage
+// const result = countNumberAndLetters("MIT 12 XYZ");
+// console.log(result); 
 
 // ZP-TASK:
 
