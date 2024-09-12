@@ -1,3 +1,28 @@
+function firstUniqueCharIndex(str: any) {
+  const charMap = new Map();
+  for (let i = 0; i < str.length; i++) {
+      let char = str[i];
+      if (charMap.has(char)) {
+          charMap.set(char, { count: charMap.get(char).count + 1, index: i });
+      } else {
+          charMap.set(char, { count: 1, index: i });
+      }
+  }
+  for (let [char, value] of charMap.entries()) {
+      if (value.count === 1) {
+          return value.index;
+      }
+  }
+
+  return -1;
+}
+
+// Example usage
+console.log(firstUniqueCharIndex("stamp"));  // Output: 0
+
+
+
+
 // ZR-TASK:
 
 // Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
@@ -5,16 +30,16 @@
 
 // @MITASK
 
-function singleNumber(arr: any) {
-  if (arr && arr.length > 0) {
-    return arr[0]; 
-  } else {
-    return null; 
-  }
-}
+// function singleNumber(arr: any) {
+//   if (arr && arr.length > 0) {
+//     return arr[0]; 
+//   } else {
+//     return null; 
+//   }
+// }
 
-// Example usage
-console.log(singleNumber([4, 2, 1, 2, 1])); // Output: 4
+// // Example usage
+// console.log(singleNumber([4, 2, 1, 2, 1])); // Output: 4
 
 
 // ZQ-TASK:
