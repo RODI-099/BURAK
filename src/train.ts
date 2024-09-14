@@ -1,24 +1,50 @@
-function firstUniqueCharIndex(str: any) {
-  const charMap = new Map();
-  for (let i = 0; i < str.length; i++) {
-      let char = str[i];
-      if (charMap.has(char)) {
-          charMap.set(char, { count: charMap.get(char).count + 1, index: i });
-      } else {
-          charMap.set(char, { count: 1, index: i });
-      }
-  }
-  for (let [char, value] of charMap.entries()) {
-      if (value.count === 1) {
-          return value.index;
-      }
-  }
+// ZT-TASK:
 
-  return -1;
+// Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+// MASALAN: sumOfUnique([1,2,3,2]) return 4
+
+
+function sumOfUnique(arr: any) {
+  const countMap = new Map();
+  arr.forEach((num: any) => {
+      countMap.set(num, (countMap.get(num) || 0) + 1);
+  });
+
+  let sum = 0;
+  countMap.forEach((count, num) => {
+      if (count === 1) {
+          sum += num;
+      }
+  });
+
+  return sum;
 }
 
-// Example usage
-console.log(firstUniqueCharIndex("stamp"));  // Output: 0
+console.log(sumOfUnique([1, 2, 4, 2, 1, 6, ])); 
+
+
+
+// function firstUniqueCharIndex(str: any) {
+//   const charMap = new Map();
+//   for (let i = 0; i < str.length; i++) {
+//       let char = str[i];
+//       if (charMap.has(char)) {
+//           charMap.set(char, { count: charMap.get(char).count + 1, index: i });
+//       } else {
+//           charMap.set(char, { count: 1, index: i });
+//       }
+//   }
+//   for (let [char, value] of charMap.entries()) {
+//       if (value.count === 1) {
+//           return value.index;
+//       }
+//   }
+
+//   return -1;
+// }
+
+// // Example usage
+// console.log(firstUniqueCharIndex("stamp"));  // Output: 0
 
 
 
