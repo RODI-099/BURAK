@@ -1,26 +1,57 @@
+// Shunday function yozing, u 2 ta array parametr qabul qilsin.
+// Siz bu ikki arrayning qiymatlari o'xshash bo'lishini 
+// (ya'ni, ularning barcha elementlari bir xil bo'lishini) tekshirishingiz kerak.
+
+// MASALAN:
+// areArraysEqual([1, 2, 3], [3, 1, 2]) // true
+// areArraysEqual([1, 2, 3], [3, 1, 2, 1]) // true
+// areArraysEqual([1, 2, 3], [4, 1, 2]) // false
+
+function areArraysEqual(arr1: any[], arr2: any[]) {
+  let sortedArr1 = arr1.slice().sort();
+  let sortedArr2 = arr2.slice().sort();
+
+  if (sortedArr1.length !== sortedArr2.length) {
+    return false;
+  }
+
+  for (let i = 0; i < sortedArr1.length; i++) {
+    if (sortedArr1[i] !== sortedArr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2])); // true
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); // false 
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2])); // false
+
+
 // ZT-TASK:
 
 // Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
 // MASALAN: sumOfUnique([1,2,3,2]) return 4
 
 
-function sumOfUnique(arr: any) {
-  const countMap = new Map();
-  arr.forEach((num: any) => {
-      countMap.set(num, (countMap.get(num) || 0) + 1);
-  });
+// function sumOfUnique(arr: any) {
+//   const countMap = new Map();
+//   arr.forEach((num: any) => {
+//       countMap.set(num, (countMap.get(num) || 0) + 1);
+//   });
 
-  let sum = 0;
-  countMap.forEach((count, num) => {
-      if (count === 1) {
-          sum += num;
-      }
-  });
+//   let sum = 0;
+//   countMap.forEach((count, num) => {
+//       if (count === 1) {
+//           sum += num;
+//       }
+//   });
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(sumOfUnique([1, 2, 4, 2, 1, 6, ])); 
+// console.log(sumOfUnique([1, 2, 4, 2, 1, 6, ])); 
 
 
 
